@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">FoodDude</string>
+
+    <string name="sign_in">SIGN IN</string>
+    <string name="email">EMAIL ADDRESS</string>
+    <string name="password">PASSWORD</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="new_user">New user?</string>
+    <string name="sign_in_with">Or Signin with</string>
+    <string name="full_name">FULL NAME</string>
+    <string name="already_reg">Already registered?</string>
+
+    <string name="emaill">Email</string>
+    <string name="phone">Phone</string>
+    <string name="Name">Name</string>
+    <string name="your_message">Your message</string>
+    <string name="send">Send us</string>
+
+    <string name="offers">OFFERS</string>
+    <string name="Addnote">Add a note (Extra source, no olive oil, etc.)</string>
+    <string name="items">Items in cart</string>
+    <string name="total">Total</string>
+
+</resources>
