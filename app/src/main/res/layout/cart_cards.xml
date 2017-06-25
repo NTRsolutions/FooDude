@@ -28,7 +28,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Crispy Chicken garlic periperi pizza"
-            android:textColor="15sp"
+            android:textSize="15sp"
+            android:textColor="@color/black"
             />
 
         <TextView

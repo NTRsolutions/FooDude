@@ -39,4 +39,8 @@
     <string name="pay_d">Pay directly from your bank</string>
     <string name="confirm">Confirm Order</string>
 
+    <string name="head_office">FooDude Head office</string>
+    <string name="restaurant">FooDude Restaurant</string>
+    <string name="contact_us">Contact us</string>
+
 </resources>
