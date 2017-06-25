@@ -204,7 +204,8 @@
                     android:layout_alignRight="@+id/cart_icon"
                     android:layout_marginRight="-10dp"
                     android:text="3"
-                    android:textColor="@color/colorAccent"/>
+                    android:textColor="@color/colorAccent"
+                    />
 
             </RelativeLayout>
 
