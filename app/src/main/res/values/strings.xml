@@ -43,4 +43,35 @@
     <string name="restaurant">FooDude Restaurant</string>
     <string name="contact_us">Contact us</string>
 
+    <string name="personal_details">Personal Details</string>
+    <string name="saved">Your Saved Addresses</string>
+    <string name="add_new">Add new</string>
+    <string name="f_name">Full Name</string>
+    <string name="email_add">Email Address</string>
+    <string name="p_num">Phone Number</string>
+
+    <string name="pay_amount">Pay Amount</string>
+    <string name="delivery">Delivery address</string>
+
+    <string name="proceed_payment">Proceed to payment</string>
+
+    <string name="food_type">Type of food</string>
+    <string name="price_sort">Price sort by</string>
+    <string name="price_range">Price range</string>
+    <string name="both">Both</string>
+    <string name="veg">Veg</string>
+    <string name="non_veg">Non-veg</string>
+    <string name="hightolow">High to Low</string>
+    <string name="lowtohigh">Low to high</string>
+    <string name="min">Min</string>
+    <string name="max">Max</string>
+    <string name="apply_f">Apply Filters</string>
+
+    <string name="order_placed">Order placed</string>
+    <string name="prepare">Preparing</string>
+    <string name="dispatched">Dispatched</string>
+    <string name="deliver">Delivered</string>
+    <string name="cash_delivery">Cash on Delivery</string>
+
+
 </resources>
