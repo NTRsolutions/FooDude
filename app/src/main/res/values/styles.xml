@@ -8,6 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
     <style name="CardViewStyle" parent="android:Widget.TextView">
         <item name="android:foreground">@drawable/selector_bg_card</item>
         <item name="cardCornerRadius">@dimen/card_corner_radius</item>
@@ -22,6 +25,9 @@
         <item name="cardPreventCornerOverlap">false</item>
         <item name="cardUseCompatPadding">true</item>
     </style>
+
+
+
 
 
 </resources>

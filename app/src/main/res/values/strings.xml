@@ -73,5 +73,28 @@
     <string name="deliver">Delivered</string>
     <string name="cash_delivery">Cash on Delivery</string>
 
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+
+    <!-- Navigation Drawer menu labels -->
+    <string name="nav_home">Home</string>
+    <string name="nav_orders">Orders</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_rate">Rate us</string>
+    <string name="nav_support">Support</string>
+    <string name="nav_share">Share</string>
+
+    <!-- Toolbar titles when navigation menu item is selected -->
+    <string-array name="nav_item_activity_titles">
+        <item>Home</item>
+        <item>Orders</item>
+        <item>Profile</item>
+        <item>Rate us</item>
+        <item>Support</item>
+        <item>share</item>
+    </string-array>
+
 
 </resources>
