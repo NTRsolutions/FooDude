@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.verbosetech.fooddude.Activities.FoodActivity;
+import com.example.verbosetech.fooddude.Activities.FoodDetailActivity;
 import com.example.verbosetech.fooddude.Activities.MainActivity;
 import com.example.verbosetech.fooddude.Models.DiscountItem;
 import com.example.verbosetech.fooddude.Models.Item;
@@ -184,7 +185,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
             @Override
             public void onCardClick(String p) {
 
-                Toast.makeText(getActivity(),p,Toast.LENGTH_LONG).show();
+                startActivity(new Intent(getActivity(), FoodDetailActivity.class));
             }
         });
 

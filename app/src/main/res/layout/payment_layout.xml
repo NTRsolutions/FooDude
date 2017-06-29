@@ -219,7 +219,8 @@
         android:gravity="center"
         android:paddingTop="15dp"
         android:paddingBottom="15dp"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorPrimary"
+        android:id="@+id/button_layout">
 
         <TextView
             android:layout_width="wrap_content"
