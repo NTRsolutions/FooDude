@@ -1,4 +1,4 @@
-package com.example.verbosetech.fooddude;
+package com.example.verbosetech.fooddude.Activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.verbosetech.fooddude.R;
 
 /**
  * Created by sagar on 24/6/17.

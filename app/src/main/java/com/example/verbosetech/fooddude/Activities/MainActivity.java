@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar_logo=(ImageView)toolbar.findViewById(R.id.toolbar_logo);
+        toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
 
         mHandler = new Handler();
@@ -186,13 +187,21 @@ public class MainActivity extends AppCompatActivity {
 
             toolbar_logo.setVisibility(View.VISIBLE);
             getSupportActionBar().setTitle("");
-            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.argb(128, 0, 0, 0)));
+            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.argb(0,15,219,154)));
+        }
+
+        else if(navItemIndex==4){
+
+            toolbar_logo.setVisibility(View.GONE);
+            getSupportActionBar().setTitle(activityTitles[navItemIndex]);
+            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.argb(0,15,219,154)));
         }
         else
 
         {
             toolbar_logo.setVisibility(View.GONE);
             getSupportActionBar().setTitle(activityTitles[navItemIndex]);
+            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.rgb(15,219,154)));
         }
 
     }

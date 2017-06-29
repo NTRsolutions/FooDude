@@ -2,22 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="15dp"
+    android:paddingTop="15dp"
     android:gravity="center"
-    android:weightSum="100"
-    android:layout_gravity="bottom"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
     >
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="80"
+        android:layout_height="?attr/actionBarSize"
         android:gravity="bottom">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/main_course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pizza"
         android:id="@+id/food_image"
         android:adjustViewBounds="true"
         />
@@ -26,12 +25,11 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:text="Pizza"
         android:textSize="10dp"
         android:id="@+id/food_name"
-        android:layout_weight="20"
-        android:gravity="bottom"
+        android:layout_marginTop="5dp"
         />
 
 </LinearLayout>

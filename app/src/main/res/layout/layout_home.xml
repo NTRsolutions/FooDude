@@ -9,7 +9,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/viewpager"
-        android:layout_marginTop="-55dp"
         />
 
     <LinearLayout
@@ -28,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_below="@+id/viewpager"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:background="@color/white"
         />
 
@@ -38,7 +37,8 @@
         android:layout_below="@+id/horizontal_recycler_view"
         android:id="@+id/special_text"
         android:text="TODAY'S SPECIAL"
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"/>
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"

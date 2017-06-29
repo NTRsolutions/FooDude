@@ -17,10 +17,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by sagar on 28/6/17.
+ * Created by sagar on 29/6/17.
  */
 
-public class OrdersFragment extends Fragment {
+public class FoodFragment extends Fragment {
+
 
     private View view;
 
@@ -31,7 +32,7 @@ public class OrdersFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.orders_layout,container,false);
+        view=inflater.inflate(R.layout.fragment_food_layout,container,false);
 
         viewPager = (ViewPager)view.findViewById(R.id.viewpager);
         createViewPager(viewPager);
@@ -44,8 +45,9 @@ public class OrdersFragment extends Fragment {
 
     private void createViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
-        adapter.addFrag(new ProcessOrdersFragment(), "In process");
-        adapter.addFrag(new PastOrdersFragment(), "Past Orders");
+        adapter.addFrag(new FoodTypeFragment(), "Periperi Cheese");
+        adapter.addFrag(new FoodTypeFragment(), "El classico cheese");
+        adapter.addFrag(new FoodTypeFragment(), "4 periperi cheese");
         viewPager.setAdapter(adapter);
     }
 
@@ -79,9 +81,11 @@ public class OrdersFragment extends Fragment {
 
     private void createTabIcons() {
 
-        tabLayout.getTabAt(0).setText("In process");
+        tabLayout.getTabAt(0).setText("Periperi Cheese");
 
-        tabLayout.getTabAt(1).setText("Past Orders");
+        tabLayout.getTabAt(1).setText("El classico cheese");
+
+        tabLayout.getTabAt(2).setText("4 periperi cheese");
     }
 
 }

@@ -20,6 +20,7 @@
             android:layout_weight="30"
             android:textStyle="bold"
             android:textColor="@color/colorPrimaryDark"
+            android:id="@+id/date"
             />
 
         <TextView
@@ -29,7 +30,8 @@
             android:layout_weight="40"
             android:gravity="center_horizontal"
             android:textSize="12dp"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            android:id="@+id/number_of_items"/>
 
         <TextView
             android:layout_width="0dp"
@@ -38,7 +40,8 @@
             android:layout_weight="30"
             android:gravity="right"
             android:textColor="@color/colorPrimary"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:id="@+id/price"/>
 
     </LinearLayout>
 

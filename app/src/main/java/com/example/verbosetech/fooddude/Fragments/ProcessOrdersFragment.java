@@ -10,17 +10,17 @@ import android.view.ViewGroup;
 import com.example.verbosetech.fooddude.R;
 
 /**
- * Created by sagar on 28/6/17.
+ * Created by sagar on 29/6/17.
  */
 
-public class SupportFragment extends Fragment {
+public class ProcessOrdersFragment extends Fragment {
 
     private View view;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.layout_contactus,container,false);
+        view=inflater.inflate(R.layout.process_layout,container,false);
         return view;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.verbosetech.fooddude.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -16,6 +17,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.verbosetech.fooddude.Activities.FoodActivity;
+import com.example.verbosetech.fooddude.Activities.MainActivity;
 import com.example.verbosetech.fooddude.Models.DiscountItem;
 import com.example.verbosetech.fooddude.Models.Item;
 import com.example.verbosetech.fooddude.Others.CustomItemAdapter;
@@ -164,7 +167,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
             @Override
             public void onCardClick(String p) {
 
-                Toast.makeText(getActivity(),p,Toast.LENGTH_LONG).show();
+                startActivity(new Intent(getActivity(), FoodActivity.class));
             }
         });
 

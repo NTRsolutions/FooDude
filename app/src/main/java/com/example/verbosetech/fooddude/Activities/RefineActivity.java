@@ -1,4 +1,4 @@
-package com.example.verbosetech.fooddude;
+package com.example.verbosetech.fooddude.Activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarChangeListener;
 import com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarFinalValueListener;
 import com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar;
+import com.example.verbosetech.fooddude.R;
 
 /**
  * Created by sagar on 27/6/17.

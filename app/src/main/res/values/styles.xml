@@ -26,6 +26,10 @@
         <item name="cardUseCompatPadding">true</item>
     </style>
 
+    <style name="backArrowTheme" parent="AppTheme">
+        <item name="android:textColorSecondary">#fff</item>
+    </style>
+
 
 
 

@@ -1,35 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="2"
-    android:background="@drawable/bg">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg"
+    >
 
-    <View
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@color/colorAccent"
-        android:layout_marginTop="250dp"
-        android:layout_weight="1">
-    </View>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="2">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/layout3">
+            android:layout_height="0dp"
+            android:layout_weight="0.95"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.05"
+            android:background="@color/colorAccent"></LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="2"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/layout3"
+            android:orientation="vertical"
+            android:layout_weight="0.80">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="96dp"
                 android:src="@drawable/foodudelogo"
-                android:layout_marginTop="30dp"
                 android:id="@+id/logo"
+                android:layout_marginTop="65dp"
                 />
 
             <LinearLayout
@@ -111,83 +126,80 @@
 
             </LinearLayout>
 
-            <RelativeLayout android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentBottom="true"
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_below="@+id/layout1"
-                android:layout_marginTop="30dp">
+        </LinearLayout>
 
-                <LinearLayout
+        <RelativeLayout android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentBottom="true"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_below="@+id/layout1"
+            android:layout_weight="1.2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:background="@color/white"
+                >
+
+                <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginRight="30dp"
-                    android:layout_marginLeft="30dp"
-                    android:background="@color/white"
-                    android:layout_alignParentBottom="true"
-                    >
+                    android:hint="@string/Name"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:backgroundTint="@color/light_gray"
+                    android:textStyle="bold"
+                    android:textSize="14dp"
+                    android:paddingBottom="20dp"
+                    />
 
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/Name"
-                        android:layout_marginTop="32dp"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginLeft="25dp"
-                        android:backgroundTint="@color/light_gray"
-                        android:textStyle="bold"
-                        android:textSize="14dp"
-                        android:paddingBottom="20dp"
-                        />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/emaill"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:backgroundTint="@color/light_gray"
+                    android:textStyle="bold"
+                    android:textSize="14dp"
+                    android:layout_marginTop="25dp"
+                    android:paddingBottom="20dp"
+                    />
 
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/emaill"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginLeft="25dp"
-                        android:backgroundTint="@color/light_gray"
-                        android:textStyle="bold"
-                        android:textSize="14dp"
-                        android:layout_marginTop="25dp"
-                        android:paddingBottom="20dp"
-                        />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/your_message"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:backgroundTint="@color/light_gray"
+                    android:textStyle="bold"
+                    android:textSize="14dp"
+                    android:layout_marginTop="25dp"
+                    android:paddingBottom="20dp"/>
 
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/your_message"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginLeft="25dp"
-                        android:backgroundTint="@color/light_gray"
-                        android:textStyle="bold"
-                        android:textSize="14dp"
-                        android:layout_marginTop="25dp"
-                        android:paddingBottom="20dp"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/send"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorAccent"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:layout_marginTop="45dp"/>
 
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/send"
-                        style="@style/Base.Widget.AppCompat.Button.Borderless"
-                        android:background="@color/colorPrimary"
-                        android:textColor="@color/colorAccent"
-                        android:textAllCaps="false"
-                        android:textStyle="bold"
-                        android:textSize="18dp"
-                        android:layout_marginTop="55dp"/>
-
-                </LinearLayout>
+            </LinearLayout>
 
 
-
-            </RelativeLayout>
 
         </RelativeLayout>
 
-    </ScrollView>
+    </LinearLayout>
 
-
-
-</FrameLayout>
+</RelativeLayout>
