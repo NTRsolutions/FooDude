@@ -1,6 +1,7 @@
 package com.example.verbosetech.fooddude.Activities;
 
 
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -36,6 +37,8 @@ public class FoodActivity extends AppCompatActivity {
         setContentView(R.layout.activity_food_layout);
         toolbar=(Toolbar)findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_keyboard_arrow_left_white_24dp);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,6 +86,12 @@ public class FoodActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
+
+        switch (item.getItemId()){
+
+            case R.id.action_filter:startActivity(new Intent(FoodActivity.this,RefineActivity.class));
+        }
+
+        return true;
     }
 }

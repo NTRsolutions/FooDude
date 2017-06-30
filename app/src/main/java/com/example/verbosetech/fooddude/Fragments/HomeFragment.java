@@ -179,7 +179,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
 
         itemList=new ArrayList<>();
         itemList.add(new DiscountItem(R.drawable.pizza1,"14.99 $","Crispy Chicken garlic periperi pizza","50% discount"));
-        itemList.add(new DiscountItem(R.drawable.pizza1,"14.99 $","Crispy Chicken garlic periperi pizza","50% discount"));
+        itemList.add(new DiscountItem(R.drawable.pizza2,"14.99 $","Paneer crispy hot veg periperi pizza","50% discount"));
 
         adapter=new DiscountItemAdapter(getActivity(), itemList, new DiscountItemAdapter.VenueAdapterClickCallbacks() {
             @Override

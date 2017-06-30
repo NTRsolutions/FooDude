@@ -26,6 +26,13 @@
         <item name="cardUseCompatPadding">true</item>
     </style>
 
+    <style name="CardViewStyle3" parent="android:Widget.TextView">
+        <item name="android:foreground">@drawable/selector_bg_card</item>
+        <item name="cardElevation">3dp</item>
+        <item name="cardPreventCornerOverlap">false</item>
+        <item name="cardUseCompatPadding">true</item>
+    </style>
+
     <style name="backArrowTheme" parent="AppTheme">
         <item name="android:textColorSecondary">#fff</item>
     </style>

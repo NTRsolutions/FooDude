@@ -52,8 +52,8 @@ public class FoodTypeFragment extends Fragment {
 
         itemVarietyList=new ArrayList<>();
         itemVarietyList.add(new ItemVariety(R.drawable.pizza1,"14.99 $","Crispy Chicken garlic periperi pizza"));
-        itemVarietyList.add(new ItemVariety(R.drawable.pizza1,"14.99 $","Crispy Chicken garlic periperi pizza"));
-        itemVarietyList.add(new ItemVariety(R.drawable.pizza1,"14.99 $","Crispy Chicken garlic periperi pizza"));
+        itemVarietyList.add(new ItemVariety(R.drawable.pizza2,"14.99 $","Paneer crispy hot veg periperi pizza"));
+
 
         adapter=new FoodVarietyAdapter(getActivity(), itemVarietyList, new FoodVarietyAdapter.VenueAdapterClickCallbacks() {
             @Override

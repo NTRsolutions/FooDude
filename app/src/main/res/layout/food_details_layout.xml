@@ -83,7 +83,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/add_inactive"
+            android:src="@drawable/remove_innactive"
             android:layout_gravity="center_vertical"
             />
 
@@ -100,7 +100,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/remove_innactive"
+            android:src="@drawable/add_inactive"
             android:layout_gravity="center_vertical"/>
 
         </LinearLayout>
@@ -158,10 +158,10 @@
         android:layout_below="@id/offer_details"
         android:id="@+id/note"
         android:hint="@string/Addnote"
-        android:backgroundTint="@color/colorAccent"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        android:paddingBottom="15dp"
         android:textSize="15dp"/>
 
     </LinearLayout>
@@ -170,7 +170,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimary"
         android:weightSum="100"

@@ -27,6 +27,7 @@
         <activity android:name=".Activities.CartActivity"></activity>
         <activity android:name=".Activities.ConfirmActivity"></activity>
         <activity android:name=".Activities.PaymentActivity"></activity>
+        <activity android:name=".Activities.RefineActivity"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

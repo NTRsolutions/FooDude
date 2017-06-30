@@ -17,6 +17,10 @@
         app:tabSelectedTextColor="@color/colorPrimary"
         app:tabIndicatorColor="@color/colorPrimary"
         app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+        app:tabIndicatorHeight="4dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+
         >
 
     </android.support.design.widget.TabLayout>
