@@ -2,6 +2,8 @@ package com.example.verbosetech.fooddude.Others;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.SpannableString;
+import android.text.style.ImageSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,6 +66,10 @@ public class CartCardAdapter extends RecyclerView.Adapter<CartCardAdapter.MyHold
         TextView price = holder.price;
         ImageView image=holder.image;
         name.setText(dataSet.get(position).getName());
+        ImageSpan is = new ImageSpan(context, R.drawable.non_veg);
+        SpannableString texts = new SpannableString(name.getText().toString().concat("   "));
+        texts.setSpan(is,texts.length()-1,texts.length(),0);
+        name.setText(texts);
 
         price.setText(dataSet.get(position).getPrice());
         image.setImageResource(dataSet.get(position).getImage());

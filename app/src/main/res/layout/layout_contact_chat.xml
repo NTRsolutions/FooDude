@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/colorAccent"></LinearLayout>
+            android:background="@color/white"></LinearLayout>
     </LinearLayout>
 
 
@@ -134,79 +134,81 @@
             android:layout_height="0dp"
             android:layout_weight="1.12">
 
-        <RelativeLayout
-            android:layout_alignParentBottom="true"
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            >
-
-            <LinearLayout
+            <RelativeLayout
+                android:layout_alignParentBottom="true"
+                xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginRight="30dp"
-                android:layout_marginLeft="30dp"
-                android:background="@color/white"
-                android:layout_marginTop="10dp"
+                android:layout_height="match_parent"
                 >
 
-                <EditText
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/Name"
-                    android:layout_marginTop="32dp"
-                    android:layout_marginRight="25dp"
-                    android:layout_marginLeft="25dp"
-                    android:backgroundTint="@color/light_gray"
-                    android:textStyle="bold"
-                    android:textSize="14dp"
-                    android:paddingBottom="20dp"
-                    />
+                    android:orientation="vertical"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    >
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/emaill"
-                    android:layout_marginRight="25dp"
-                    android:layout_marginLeft="25dp"
-                    android:backgroundTint="@color/light_gray"
-                    android:textStyle="bold"
-                    android:textSize="14dp"
-                    android:layout_marginTop="25dp"
-                    android:paddingBottom="20dp"
-                    />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Support Team"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:background="@color/colorPrimary"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"/>
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/your_message"
-                    android:layout_marginRight="25dp"
-                    android:layout_marginLeft="25dp"
-                    android:backgroundTint="@color/light_gray"
-                    android:textStyle="bold"
-                    android:textSize="14dp"
-                    android:layout_marginTop="25dp"
-                    android:paddingBottom="15dp"/>
+                    <ListView
+                        android:id="@+id/messages_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_above="@+id/input_bar"
+                        android:stackFromBottom="true"
+                        android:background="@drawable/wallpaper"/>
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:text="@string/send"
-                    style="@style/Base.Widget.AppCompat.Button.Borderless"
-                    android:background="@color/colorPrimary"
-                    android:textColor="@color/colorAccent"
-                    android:textAllCaps="false"
-                    android:textStyle="bold"
-                    android:textSize="18dp"
-                    android:layout_marginTop="45dp"
-                    android:layout_marginBottom="25dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="100"
+                        android:paddingRight="5dp">
 
-            </LinearLayout>
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:hint="Write a message"
+                        android:drawableLeft="@drawable/ic_mic_grey_24dp"
+                        android:paddingBottom="15dp"
+                        android:paddingTop="15dp"
+                        android:paddingLeft="10dp"
+                        android:drawablePadding="10dp"
+                        android:textSize="12dp"
+                        android:paddingRight="10dp"
+                        android:id="@+id/message_input"
+                        android:layout_weight="90"
+                        />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/ic_send_green_24dp"
+                        android:layout_weight="10"
+                        android:id="@+id/send_button"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
 
 
-        </RelativeLayout>
+            </RelativeLayout>
 
         </ScrollView>
 

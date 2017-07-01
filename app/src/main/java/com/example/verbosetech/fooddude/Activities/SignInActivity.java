@@ -1,9 +1,11 @@
 package com.example.verbosetech.fooddude.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,6 +21,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     TextView sign_in,sign_up,sign_in_text,sign_up_text;
     EditText name;
     LinearLayout layout1,layout2;
+    Button signIn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,6 +34,9 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         name=(EditText)findViewById(R.id.full_name);
         layout1=(LinearLayout)findViewById(R.id.layout1);
         layout2=(LinearLayout)findViewById(R.id.layout2);
+        signIn=(Button)findViewById(R.id.sign_in_button);
+
+        signIn.setOnClickListener(this);
 
         sign_up.setOnClickListener(this);
         sign_in.setOnClickListener(this);
@@ -58,6 +64,9 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                 layout2.setVisibility(View.GONE);
                 layout1.setVisibility(View.VISIBLE);
                 break;
+
+            case R.id.sign_in_button:startActivity(new Intent(this,MainActivity.class));
+                finish();
         }
     }
 }

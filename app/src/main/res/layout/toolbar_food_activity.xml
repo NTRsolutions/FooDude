@@ -9,7 +9,8 @@
     app:contentInsetLeft="0dp"
     app:contentInsetStart="0dp"
     app:contentInsetStartWithNavigation="0dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MyActionBarTheme">
 
     <android.support.v7.widget.AppCompatSpinner
         android:layout_width="wrap_content"

@@ -323,6 +323,7 @@ public class MainActivity extends AppCompatActivity {
                 loadHomeFragment();
                 return;
             }
+
         }
 
         super.onBackPressed();

@@ -3,27 +3,27 @@ package com.example.verbosetech.fooddude.Others;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.text.SpannableString;
-import android.text.style.ImageSpan;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+
 import android.widget.TextView;
 
-import com.example.verbosetech.fooddude.Models.DiscountItem;
-import com.example.verbosetech.fooddude.Models.ItemVariety;
+import com.example.verbosetech.fooddude.Models.BillItem;
+
 import com.example.verbosetech.fooddude.R;
 
 import java.util.List;
 
 /**
- * Created by sagar on 29/6/17.
+ * Created by sagar on 1/7/17.
  */
 
-public class FoodVarietyAdapter extends RecyclerView.Adapter<FoodVarietyAdapter.MyHolder> {
+public class BillAdapter extends RecyclerView.Adapter<BillAdapter.MyHolder> {
 
     public RecyclerView re;
-    private List<ItemVariety> dataSet ;
+    private List<BillItem> dataSet ;
     public Context context=null;
     VenueAdapterClickCallbacks venueAdapterClickCallbacks;
 
@@ -31,18 +31,17 @@ public class FoodVarietyAdapter extends RecyclerView.Adapter<FoodVarietyAdapter.
     {
         TextView name;
         TextView price;
-        ImageView image;
 
         public MyHolder(View itemView)
         {
             super(itemView);
             this.name = (TextView) itemView.findViewById(R.id.item_name);
             this.price = (TextView) itemView.findViewById(R.id.price);
-            this.image=(ImageView)itemView.findViewById(R.id.image);
+
         }
     }
 
-    public FoodVarietyAdapter(Context c, List<ItemVariety> data, VenueAdapterClickCallbacks venueAdapterClickCallback)
+    public BillAdapter(Context c, List<BillItem> data, VenueAdapterClickCallbacks venueAdapterClickCallback)
     {
 
         this.dataSet = data;
@@ -54,9 +53,9 @@ public class FoodVarietyAdapter extends RecyclerView.Adapter<FoodVarietyAdapter.
     @Override
     public MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         final View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.menu_item_card, parent, false);
+                .inflate(R.layout.bill_item_layout, parent, false);
         MyHolder myNewsHolder=new MyHolder(view);
-        re = (RecyclerView) parent.findViewById(R.id.food_type_grid);
+        re = (RecyclerView) parent.findViewById(R.id.bill_item_grid);
         return myNewsHolder;
     }
 
@@ -65,16 +64,15 @@ public class FoodVarietyAdapter extends RecyclerView.Adapter<FoodVarietyAdapter.
 
         TextView name = holder.name;
         TextView price = holder.price;
-        ImageView image=holder.image;
-        name.setText(dataSet.get(position).getName());
 
-        ImageSpan is = new ImageSpan(context, R.drawable.non_veg);
-        SpannableString texts = new SpannableString(name.getText().toString().concat("   "));
-        texts.setSpan(is,texts.length()-1,texts.length(),0);
-        name.setText(texts);
+        name.setText(dataSet.get(position).getName()+" "+dataSet.get(position).getQuantity());
 
-        price.setText(dataSet.get(position).getPrice());
-        image.setImageResource(dataSet.get(position).getImage());
+        String s=dataSet.get(position).getQuantity();
+
+        int q=Integer.parseInt(s.substring(2,s.length()-1));
+
+        price.setText(dataSet.get(position).getPerprice()*q+"");
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,3 +95,4 @@ public class FoodVarietyAdapter extends RecyclerView.Adapter<FoodVarietyAdapter.
 
     }
 }
+
