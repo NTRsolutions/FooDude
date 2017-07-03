@@ -1,10 +1,12 @@
 package com.example.verbosetech.fooddude.Others;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.verbosetech.fooddude.Models.PastOrders;
@@ -17,7 +19,7 @@ import java.util.List;
  * Created by sagar on 29/6/17.
  */
 
-public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.MyHolder> {
+public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.MyHolder>  {
 
     public RecyclerView re;
     private List<Profile> dataSet ;
@@ -26,10 +28,14 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.MyHolder
 
 
 
+
     public class MyHolder extends RecyclerView.ViewHolder
     {
         TextView address_type;
         TextView address;
+        ImageView drop_down;
+        TextView edit,remove;
+        CardView card;
 
 
         public MyHolder(View itemView)
@@ -37,6 +43,11 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.MyHolder
             super(itemView);
             this.address_type = (TextView) itemView.findViewById(R.id.address_type);
             this.address = (TextView) itemView.findViewById(R.id.address);
+            this.drop_down=(ImageView)itemView.findViewById(R.id.drop_down);
+            this.edit=(TextView)itemView.findViewById(R.id.edit);
+            this.remove=(TextView)itemView.findViewById(R.id.remove);
+            this.card=(CardView)itemView.findViewById(R.id.drop_down_card);
+
         }
     }
 
@@ -63,15 +74,48 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.MyHolder
 
         TextView type = holder.address_type;
         TextView address = holder.address;
+        final ImageView drop_down=holder.drop_down;
+        TextView edit=holder.edit;
+        TextView remove=holder.remove;
+        final CardView card=holder.card;
 
         type.setText(dataSet.get(position).getAdd_type());
         address.setText(dataSet.get(position).getAddress());
+
+        drop_down.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                card.setVisibility(View.VISIBLE);
+
+            }
+        });
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                card.setVisibility(View.GONE);
+
+            }
+        });
+        remove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                card.setVisibility(View.GONE);
+
+            }
+        });
+
+
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                if(card.getVisibility()==View.VISIBLE)
+                    card.setVisibility(View.GONE);
                 venueAdapterClickCallbacks.onCardClick(dataSet.get(position).getAdd_type());
 
             }
