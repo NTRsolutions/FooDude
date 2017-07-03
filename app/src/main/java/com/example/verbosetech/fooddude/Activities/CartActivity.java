@@ -11,12 +11,14 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.verbosetech.fooddude.Models.ItemVariety;
 import com.example.verbosetech.fooddude.Others.CartCardAdapter;
 import com.example.verbosetech.fooddude.Others.FoodVarietyAdapter;
 import com.example.verbosetech.fooddude.R;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +34,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     CartCardAdapter adapter;
     RecyclerView recyclerView;
     List<ItemVariety> cartList;
+    TextView subtotal,service_tax,delivery_charge,total;
 
     Toolbar toolbar;
 
@@ -41,6 +44,10 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.cart_layout);
         button_layout=(LinearLayout)findViewById(R.id.button_layout);
         button_layout.setOnClickListener(this);
+        subtotal=(TextView)findViewById(R.id.subtotal);
+        service_tax=(TextView)findViewById(R.id.service_tax);
+        delivery_charge=(TextView)findViewById(R.id.delivery_charge);
+        total=(TextView)findViewById(R.id.total);
 
         toolbar=(Toolbar)findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_keyboard_arrow_left_white_24dp);
@@ -78,15 +85,23 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
 
         cartList=new ArrayList<>();
 
-        cartList.add(new ItemVariety(R.drawable.pizza1,"14.99 $","Crispy Chicken garlic periperi pizza"));
-        cartList.add(new ItemVariety(R.drawable.pizza2,"12.99 $","Paneer crispy hot veg periperi pizza"));
+        cartList.add(new ItemVariety(R.drawable.pizza1,"14.99","Crispy Chicken garlic periperi pizza"));
+        cartList.add(new ItemVariety(R.drawable.pizza2,"12.80","Paneer crispy hot veg periperi pizza"));
 
 
         adapter=new CartCardAdapter(getApplicationContext(), cartList, new CartCardAdapter.VenueAdapterClickCallbacks() {
             @Override
             public void onCardClick(String p) {
 
+                    double price=Double.parseDouble(p);
+                    double tax=0.04*price;
+                    DecimalFormat numberFormat = new DecimalFormat("#.00");
 
+                    subtotal.setText(numberFormat.format(price)+" $");
+                    service_tax.setText(numberFormat.format(tax)+" $");
+                    delivery_charge.setText(0.50+" $");
+                    price=price+tax+0.50;
+                    total.setText(numberFormat.format(price)+" $");
 
             }
         });

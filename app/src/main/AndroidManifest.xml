@@ -18,7 +18,7 @@
 
 
 
-        <activity android:name=".Activities.MainActivity">
+        <activity android:name=".Activities.SplashActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -29,11 +29,14 @@
 
         <activity android:name=".Activities.FoodActivity"></activity>
         <activity android:name=".Activities.FoodDetailActivity"
-            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+                  android:windowSoftInputMode="stateHidden|adjustResize"></activity>
         <activity android:name=".Activities.CartActivity"></activity>
         <activity android:name=".Activities.ConfirmActivity"></activity>
         <activity android:name=".Activities.PaymentActivity"></activity>
         <activity android:name=".Activities.RefineActivity"></activity>
+        <activity android:name=".Activities.SignInActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+        <activity android:name=".Activities.MainActivity"></activity>
 
 
         <meta-data

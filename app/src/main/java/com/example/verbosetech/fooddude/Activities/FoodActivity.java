@@ -13,6 +13,7 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +21,7 @@ import android.widget.Spinner;
 
 import com.example.verbosetech.fooddude.Fragments.FoodFragment;
 import com.example.verbosetech.fooddude.Models.ItemData;
+import com.example.verbosetech.fooddude.Others.PrefManager;
 import com.example.verbosetech.fooddude.Others.SpinnerAdapter;
 import com.example.verbosetech.fooddude.R;
 
@@ -34,11 +36,13 @@ import static com.example.verbosetech.fooddude.R.id.spinner;
 public class FoodActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     Toolbar toolbar;
+    PrefManager prefManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_layout);
+        prefManager=new PrefManager(getApplicationContext());
         toolbar=(Toolbar)findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_keyboard_arrow_left_white_24dp);
         toolbar.setTitle("");
@@ -78,6 +82,11 @@ public class FoodActivity extends AppCompatActivity implements SearchView.OnQuer
                 R.layout.spinner_layout,R.id.food_name,list);
         sp.getBackground().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
         sp.setAdapter(adapter);
+
+        String compareValue=prefManager.getItem();
+
+        Log.e("","");
+
     }
 
     @Override

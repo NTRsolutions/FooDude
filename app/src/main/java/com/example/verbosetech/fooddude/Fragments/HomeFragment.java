@@ -29,6 +29,7 @@ import com.example.verbosetech.fooddude.Others.CustomItemAdapter;
 import com.example.verbosetech.fooddude.Others.CustomPagerAdapter;
 import com.example.verbosetech.fooddude.Others.DiscountItemAdapter;
 import com.example.verbosetech.fooddude.Others.Pager;
+import com.example.verbosetech.fooddude.Others.PrefManager;
 import com.example.verbosetech.fooddude.R;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
@@ -76,6 +77,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
     int item[]={R.drawable.pizza,R.drawable.main_course,R.drawable.burger,R.drawable.chinese,R.drawable.soup};
 
     int PLACE_PICKER_REQUEST = 1;
+    PrefManager pref;
 
     int[] mResources = {R.drawable.banerburger, R.drawable.banerburger, R.drawable.banerburger,R.drawable.banerburger};
 
@@ -92,6 +94,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
 
         city=(TextView)view.findViewById(R.id.city);
         street=(TextView)view.findViewById(R.id.street);
+        pref=new PrefManager(getActivity());
 
 
         horizontal_recycler_view= (RecyclerView) view.findViewById(R.id.horizontal_recycler_view);
@@ -197,6 +200,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
             @Override
             public void onCardClick(String p) {
 
+                pref.setItem(p);
                 startActivity(new Intent(getActivity(), FoodActivity.class));
             }
         });

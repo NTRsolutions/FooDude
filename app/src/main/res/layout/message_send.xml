@@ -19,7 +19,7 @@
         android:textColor="@color/black"
         android:text="Hey !How may I help you?"
         android:layout_gravity="right|center_vertical"
-        android:textSize="10dp"
+        android:textSize="12dp"
         />
 
     </LinearLayout>

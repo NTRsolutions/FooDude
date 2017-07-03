@@ -9,6 +9,7 @@
     <string name="sign_in_with">Or Signin with</string>
     <string name="full_name">FULL NAME</string>
     <string name="already_reg">Already registered?</string>
+    <string name="Forgot">FORGOT?</string>
 
     <string name="emaill">Email</string>
     <string name="phone">Phone</string>
@@ -22,7 +23,7 @@
     <string name="total">Total</string>
 
     <string name="sub_total">Sub Total</string>
-    <string name="service_free">Service fee</string>
+    <string name="service_free">Service fee(4%)</string>
     <string name="delivery_charge">Delivery Charge</string>
     <string name="promocode">Have promocode?</string>
     <string name="proceed">Proceed to Checkout</string>

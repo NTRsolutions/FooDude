@@ -18,7 +18,7 @@ import com.example.verbosetech.fooddude.R;
 
 public class SignInActivity extends AppCompatActivity implements View.OnClickListener {
 
-    TextView sign_in,sign_up,sign_in_text,sign_up_text;
+    TextView sign_in,sign_up,sign_in_text,sign_up_text,forgot;
     EditText name;
     LinearLayout layout1,layout2;
     Button signIn;
@@ -31,6 +31,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         sign_in=(TextView)findViewById(R.id.sign_in);
         sign_in_text=(TextView)findViewById(R.id.sign_in_text);
         sign_up_text=(TextView)findViewById(R.id.sign_up_text);
+        forgot=(TextView)findViewById(R.id.forgot);
         name=(EditText)findViewById(R.id.full_name);
         layout1=(LinearLayout)findViewById(R.id.layout1);
         layout2=(LinearLayout)findViewById(R.id.layout2);
@@ -54,6 +55,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                 name.setVisibility(View.VISIBLE);
                 layout1.setVisibility(View.GONE);
                 layout2.setVisibility(View.VISIBLE);
+                forgot.setVisibility(View.VISIBLE);
 
 
                 break;
@@ -63,6 +65,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                 name.setVisibility(View.GONE);
                 layout2.setVisibility(View.GONE);
                 layout1.setVisibility(View.VISIBLE);
+                forgot.setVisibility(View.GONE);
                 break;
 
             case R.id.sign_in_button:startActivity(new Intent(this,MainActivity.class));

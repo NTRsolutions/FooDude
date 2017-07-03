@@ -27,7 +27,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/layout1"
+        android:layout_above="@+id/button_layout"
         android:background="@color/colorAccent"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -76,7 +76,8 @@
             android:layout_height="wrap_content"
             android:text="27.96$"
             android:layout_alignParentRight="true"
-            android:textSize="@dimen/textsize"/>
+            android:textSize="@dimen/textsize"
+            android:id="@+id/subtotal"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -84,7 +85,8 @@
             android:text="1.09$"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/subtotal_text"
-            android:textSize="@dimen/textsize"/>
+            android:textSize="@dimen/textsize"
+            android:id="@+id/service_tax"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -92,7 +94,8 @@
             android:text="0.50$"
             android:layout_below="@+id/service_text"
             android:layout_alignParentRight="true"
-            android:textSize="@dimen/textsize"/>
+            android:textSize="@dimen/textsize"
+            android:id="@+id/delivery_charge"/>
 
     </RelativeLayout>
 
@@ -102,8 +105,7 @@
     android:layout_alignParentBottom="true"
     android:background="@color/colorPrimary"
     android:weightSum="100"
-    android:id="@+id/layout1"
-        >
+    android:id="@+id/button_layout">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -129,7 +131,6 @@
         android:layout_height="match_parent"
         android:layout_weight="50"
         android:gravity="right|center_vertical"
-        android:id="@+id/button_layout"
         >
 
         <TextView
@@ -148,6 +149,7 @@
             android:textStyle="bold"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="5dp"
+            android:id="@+id/total"
             />
 
         <ImageView
