@@ -95,6 +95,8 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.MyHolder
             public void onClick(View v) {
 
                 card.setVisibility(View.GONE);
+                venueAdapterClickCallbacks.onEditClick();
+
 
             }
         });
@@ -103,6 +105,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.MyHolder
             public void onClick(View v) {
 
                 card.setVisibility(View.GONE);
+
 
             }
         });
@@ -132,8 +135,8 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.MyHolder
     public interface VenueAdapterClickCallbacks {
 
         void onCardClick(String p);
+        void onEditClick();
     }
-
 
 }
 

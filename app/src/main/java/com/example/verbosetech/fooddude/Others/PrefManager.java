@@ -52,6 +52,4 @@ public class PrefManager {
         return pref.getFloat("amount", 0.0f);
     }
 
-
-
 }

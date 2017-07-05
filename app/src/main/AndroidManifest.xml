@@ -37,6 +37,8 @@
         <activity android:name=".Activities.SignInActivity"
             android:windowSoftInputMode="stateHidden|adjustResize"></activity>
         <activity android:name=".Activities.MainActivity"></activity>
+        <activity android:name=".Activities.AddAddressActivity"></activity>
+        <activity android:name=".Activities.EditActivity"></activity>
 
 
         <meta-data

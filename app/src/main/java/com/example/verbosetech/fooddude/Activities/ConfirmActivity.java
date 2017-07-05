@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -33,12 +34,15 @@ public class ConfirmActivity extends AppCompatActivity implements View.OnClickLi
     BillAdapter adapter;
     RecyclerView recyclerView;
     List<BillItem> billItemList;
+    ImageView edit;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.confirm_order_layout);
+
+        edit=(ImageView)findViewById(R.id.edit);
 
         toolbar=(Toolbar)findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_keyboard_arrow_left_white_24dp);
@@ -53,6 +57,8 @@ public class ConfirmActivity extends AppCompatActivity implements View.OnClickLi
 
             }
         });
+
+        edit.setOnClickListener(this);
 
         recyclerView = (RecyclerView) findViewById(R.id.bill_item_grid);
         recyclerView.setHasFixedSize(true);
@@ -73,6 +79,8 @@ public class ConfirmActivity extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()){
 
            case R.id.button_layout:startActivity(new Intent(ConfirmActivity.this,PaymentActivity.class));
+               break;
+            case R.id.edit:startActivity(new Intent(ConfirmActivity.this,EditActivity.class));
         }
     }
 

@@ -1,5 +1,6 @@
 package com.example.verbosetech.fooddude.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.verbosetech.fooddude.Activities.AddAddressActivity;
+import com.example.verbosetech.fooddude.Activities.EditActivity;
 import com.example.verbosetech.fooddude.Activities.TestActivity;
 import com.example.verbosetech.fooddude.Models.PastOrders;
 import com.example.verbosetech.fooddude.Models.Profile;
@@ -77,8 +80,15 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onCardClick(String p) {
 
-                Toast.makeText(getActivity(),p,Toast.LENGTH_LONG).show();
 
+
+            }
+
+            @Override
+            public void onEditClick() {
+
+
+                startActivity(new Intent(getActivity(), EditActivity.class));
             }
         });
 
@@ -98,13 +108,16 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 save.setVisibility(View.VISIBLE);
                 edit.setVisibility(View.GONE);
                 break;
+
             case R.id.save:name.setEnabled(false);
                 mail.setEnabled(false);
                 phone.setEnabled(false);
                 save.setVisibility(View.GONE);
                 edit.setVisibility(View.VISIBLE);
                 break;
-            case R.id.add_new:break;
+
+            case R.id.add_new:startActivity(new Intent(getActivity(), AddAddressActivity.class));
+                break;
         }
     }
 }
