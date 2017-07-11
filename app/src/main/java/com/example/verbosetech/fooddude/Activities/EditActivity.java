@@ -43,6 +43,9 @@ public class EditActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
 
+        //spinner containing the names of the states
+        //can be filled with JSON API
+
         spinner_states_activity = (Spinner)findViewById(R.id.state);
         spinner_states_activity.setOnItemSelectedListener(this);
         adapter = ArrayAdapter.createFromResource(

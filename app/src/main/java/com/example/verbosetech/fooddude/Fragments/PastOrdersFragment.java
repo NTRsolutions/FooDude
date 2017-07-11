@@ -47,6 +47,8 @@ public class PastOrdersFragment extends Fragment {
     public void getCards(){
 
         ordersList=new ArrayList<>();
+
+        //filling the cards with data(Data from JSON API will be received here)
         ordersList.add(new PastOrders("12 May","3 items ordered","33.54 $"));
         ordersList.add(new PastOrders("08 May","2 items ordered","21.57 $"));
         ordersList.add(new PastOrders("02 May","2 items ordered","24.89 $"));
@@ -58,6 +60,7 @@ public class PastOrdersFragment extends Fragment {
             public void onCardClick(String p) {
 
                 Toast.makeText(getActivity(),p,Toast.LENGTH_LONG).show();
+                //perform the card click functionality
             }
         });
         recyclerView.setAdapter(adapter);

@@ -73,6 +73,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     public void getCards(){
 
         profileList=new ArrayList<>();
+
+        //fill the cards with saved address(Data from JSON API will be received)
+
         profileList.add(new Profile("Home","225, Chris Tower E Smallsys INC 795 Dragram,Tuscon AZ-85705,USA"));
         profileList.add(new Profile("Office","225, Chris Tower E Smallsys INC 795 Dragram,Tuscon AZ-85705,USA"));
 
@@ -80,7 +83,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onCardClick(String p) {
 
-
+                //perform card click functionality
 
             }
 
@@ -89,6 +92,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
 
                 startActivity(new Intent(getActivity(), EditActivity.class));
+                //intent to edit class activity
             }
         });
 
@@ -102,6 +106,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()){
 
             case R.id.edit:
+
+                //enabling the edit text fields
                 name.setEnabled(true);
                 mail.setEnabled(true);
                 phone.setEnabled(true);
@@ -109,6 +115,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 edit.setVisibility(View.GONE);
                 break;
 
+                //disabling the edit text fields
             case R.id.save:name.setEnabled(false);
                 mail.setEnabled(false);
                 phone.setEnabled(false);

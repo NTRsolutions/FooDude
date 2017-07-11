@@ -58,6 +58,8 @@ public class FoodActivity extends AppCompatActivity implements SearchView.OnQuer
 
         getToolbarSpinner();
 
+        //opening the fragment
+
         Fragment fragment = new FoodFragment();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
@@ -71,6 +73,8 @@ public class FoodActivity extends AppCompatActivity implements SearchView.OnQuer
 
         ArrayList<ItemData> list=new ArrayList<>();
 
+        //filling the spinner in toolbar
+
         list.add(new ItemData("Pizza",R.drawable.pizza_wht));
         list.add(new ItemData("Meal Combo",R.drawable.main_course_wht));
         list.add(new ItemData("Burger",R.drawable.burger_wht));
@@ -82,10 +86,6 @@ public class FoodActivity extends AppCompatActivity implements SearchView.OnQuer
                 R.layout.spinner_layout,R.id.food_name,list);
         sp.getBackground().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
         sp.setAdapter(adapter);
-
-        String compareValue=prefManager.getItem();
-
-        Log.e("","");
 
     }
 

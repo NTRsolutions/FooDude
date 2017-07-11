@@ -34,6 +34,8 @@ public class FoodDetailActivity extends AppCompatActivity implements View.OnClic
 
         itemname=(TextView)findViewById(R.id.item_name);
 
+        //adding the image of non-veg sign at the end ot the name of pizza
+
         ImageSpan is = new ImageSpan(getApplicationContext(), R.drawable.non_veg);
         SpannableString texts = new SpannableString(itemname.getText().toString().concat("   "));
         texts.setSpan(is,texts.length()-1,texts.length(),0);
@@ -59,12 +61,13 @@ public class FoodDetailActivity extends AppCompatActivity implements View.OnClic
 
         switch (v.getId()){
 
-
-
             case R.id.button_layout:startActivity(new Intent(FoodDetailActivity.this,CartActivity.class));
                 break;
+
             case R.id.back:finish();
                 break;
+
+            //cases to handle add and remove button functions
             case R.id.remove:
                 int cal_dist=0,d;
                 String a=no_of_items.getText().toString();
@@ -73,6 +76,7 @@ public class FoodDetailActivity extends AppCompatActivity implements View.OnClic
                     cal_dist=--d;
                 no_of_items.setText(cal_dist+"");
                 break;
+
             case R.id.add:
                 a=no_of_items.getText().toString();
                 d=Integer.parseInt(a);

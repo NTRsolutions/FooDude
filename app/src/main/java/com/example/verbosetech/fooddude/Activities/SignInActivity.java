@@ -49,6 +49,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
         switch (v.getId()){
 
+            //to turn it into sign up layout
+
             case R.id.sign_up:
 
                 sign_up_text.setVisibility(View.VISIBLE);
@@ -60,6 +62,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
                 break;
             case R.id.sign_in:
+
+                //to turn it into sign in layout
 
                 sign_up_text.setVisibility(View.GONE);
                 name.setVisibility(View.GONE);

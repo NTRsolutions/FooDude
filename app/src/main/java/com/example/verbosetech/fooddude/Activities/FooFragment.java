@@ -46,6 +46,8 @@ public class FooFragment extends Fragment {
     public void setAdapter(){
 
         horizontalList=new ArrayList<>();
+
+        //
         horizontalList.add(new Variety("PERIPERI CHEESE"));
         horizontalList.add(new Variety("EL CLASSICO CHEESE"));
         horizontalList.add(new Variety("4 PERIPERI CHEESE"));

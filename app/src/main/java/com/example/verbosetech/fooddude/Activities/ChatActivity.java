@@ -37,6 +37,8 @@ public class ChatActivity extends AppCompatActivity {
         layoutManager.setStackFromEnd(true);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        //prepare chat cards
         getCards();
     }
 
@@ -47,10 +49,13 @@ public class ChatActivity extends AppCompatActivity {
         messageList=new ArrayList<>();
         messageList.add(new Message("Hey !How may I help you?","Server"));
 
+        //here cards will be filled with contents of chat
+
         adapter = new CustomMessageAdapter(getApplicationContext(), messageList, new CustomMessageAdapter.VenueAdapterClickCallbacks() {
             @Override
             public void onCardClick(String p) {
 
+                // to perform on chat card's click
             }
         });
 

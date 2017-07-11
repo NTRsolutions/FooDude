@@ -34,9 +34,11 @@ public class FoodFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.fragment_food_layout,container,false);
 
+        //setting the view pager
         viewPager = (ViewPager)view.findViewById(R.id.viewpager);
         createViewPager(viewPager);
 
+        //intializing the tab layout
         tabLayout = (TabLayout)view.findViewById(R.id.tab_host);
         tabLayout.setupWithViewPager(viewPager);
         createTabIcons();
@@ -45,6 +47,9 @@ public class FoodFragment extends Fragment {
 
     private void createViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
+
+        //filling adapter of view pager with the fragments
+
         adapter.addFrag(new FoodTypeFragment(), "Periperi Cheese");
         adapter.addFrag(new FoodTypeFragment(), "El classico cheese");
         adapter.addFrag(new FoodTypeFragment(), "4 periperi cheese");

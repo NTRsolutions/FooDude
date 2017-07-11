@@ -52,6 +52,7 @@ public class ProcessOrdersFragment extends Fragment {
     public void getCards(){
 
         billItemList=new ArrayList<>();
+
         billItemList.add(new BillItem("Crispy Chicken garlic periperi pizza","(x1)",14.99));
         billItemList.add(new BillItem("Paneer crispy hot veg periperi pizza","(x1)",12.99));
 

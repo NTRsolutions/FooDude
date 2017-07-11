@@ -79,14 +79,20 @@ public class ConfirmActivity extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()){
 
            case R.id.button_layout:startActivity(new Intent(ConfirmActivity.this,PaymentActivity.class));
+               //intent to go to payment activity to perform payment
                break;
             case R.id.edit:startActivity(new Intent(ConfirmActivity.this,EditActivity.class));
+                //intent to go to payment activity to edit delivery address
+                break;
         }
     }
 
     public void getCards(){
 
         billItemList=new ArrayList<>();
+
+        //filling bill with the contents purchased(Data from API)
+
         billItemList.add(new BillItem("Crispy Chicken garlic periperi pizza","(x1)",14.99));
         billItemList.add(new BillItem("Paneer crispy hot veg periperi pizza","(x1)",12.99));
 
@@ -95,6 +101,7 @@ public class ConfirmActivity extends AppCompatActivity implements View.OnClickLi
             public void onCardClick(String p) {
 
                 Toast.makeText(getApplicationContext(),p,Toast.LENGTH_LONG).show();
+                //optional card click function
             }
         });
 

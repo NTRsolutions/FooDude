@@ -42,6 +42,8 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cart_layout);
+
+        // Intialising layout view
         button_layout=(LinearLayout)findViewById(R.id.button_layout);
         button_layout.setOnClickListener(this);
         subtotal=(TextView)findViewById(R.id.subtotal);
@@ -69,6 +71,8 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
+
+        //preparing cart cards
         getCartCards();
     }
 
@@ -78,12 +82,15 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
 
             case R.id.button_layout:startActivity(new Intent(CartActivity.this,ConfirmActivity.class));
+                //intent to next i.e confirm activity
         }
     }
 
     public void getCartCards(){
 
         cartList=new ArrayList<>();
+
+        //filling cart cards with data(Data from JSON api will be filled here)
 
         cartList.add(new ItemVariety(R.drawable.pizza1,"14.99","Crispy Chicken garlic periperi pizza"));
         cartList.add(new ItemVariety(R.drawable.pizza2,"12.80","Paneer crispy hot veg periperi pizza"));
@@ -93,6 +100,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onCardClick(String p) {
 
+                    //restricting decimal numbers to two decimal place
                     double price=Double.parseDouble(p);
                     double tax=0.04*price;
                     DecimalFormat numberFormat = new DecimalFormat("#.00");

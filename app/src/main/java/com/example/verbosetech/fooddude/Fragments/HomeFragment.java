@@ -96,7 +96,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
         street=(TextView)view.findViewById(R.id.street);
         pref=new PrefManager(getActivity());
 
-
+        //intialising the horizontal recycle view
         horizontal_recycler_view= (RecyclerView) view.findViewById(R.id.horizontal_recycler_view);
         LinearLayoutManager horizontalLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         horizontal_recycler_view.setLayoutManager(horizontalLayoutManager);
@@ -109,6 +109,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         setDiscountCards();
 
+        //setting the adapter the image's viewpager
         mAdapter = new CustomPagerAdapter(getActivity(), mResources);
         mViewPager.setAdapter(mAdapter);
         mViewPager.setCurrentItem(0);
@@ -122,6 +123,8 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
     }
 
     private void setPageViewIndicator() {
+
+        //setting the dots for image's view pager
 
         Log.d("###setPageViewIndicator", " : called");
         dotsCount = mAdapter.getCount();
@@ -190,6 +193,8 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
     public void setAdapter(){
 
         horizontalList=new ArrayList<>();
+
+        //filling the data in horizontal recycle view of home page
         horizontalList.add(new Item(item[0],"Pizza"));
         horizontalList.add(new Item(item[1],"Meal Combo"));
         horizontalList.add(new Item(item[2],"Burger"));
@@ -211,6 +216,8 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
     public void setDiscountCards(){
 
         itemList=new ArrayList<>();
+
+        //filling the data in discount recycle view
         itemList.add(new DiscountItem(R.drawable.pizza1,"14.99 $","Crispy Chicken garlic periperi pizza","50% discount"));
         itemList.add(new DiscountItem(R.drawable.pizza2,"12.99 $","Paneer crispy hot veg periperi pizza","50% discount"));
 
