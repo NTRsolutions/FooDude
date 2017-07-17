@@ -40,16 +40,10 @@
     <string name="pay_d">Pay directly from your bank</string>
     <string name="confirm">Confirm Order</string>
 
-    <string name="head_office">FooDude Head office</string>
-    <string name="restaurant">FooDude Restaurant</string>
-    <string name="contact_us">Contact us</string>
-
-    <string name="personal_details">Personal Details</string>
     <string name="saved">Your Saved Addresses</string>
     <string name="add_new">Add new</string>
     <string name="f_name">Full Name</string>
     <string name="email_add">Email Address</string>
-    <string name="p_num">Phone Number</string>
 
     <string name="pay_amount">Pay Amount</string>
     <string name="delivery">Delivery address</string>
@@ -76,8 +70,6 @@
 
     <string name="add">Add</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="openDrawer">open_drawer</string>
     <string name="closeDrawer">close_drawer</string>
 

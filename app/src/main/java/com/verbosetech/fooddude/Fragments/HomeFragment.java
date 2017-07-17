@@ -18,6 +18,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlacePicker;
 import com.verbosetech.fooddude.Activities.FoodActivity;
 import com.verbosetech.fooddude.Activities.FoodDetailActivity;
 import com.verbosetech.fooddude.Models.DiscountItem;
@@ -28,10 +32,6 @@ import com.verbosetech.fooddude.Others.DiscountItemAdapter;
 import com.verbosetech.fooddude.Others.Pager;
 import com.verbosetech.fooddude.Others.PrefManager;
 import com.verbosetech.fooddude.R;
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
-import com.google.android.gms.location.places.Place;
-import com.google.android.gms.location.places.ui.PlacePicker;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,7 +64,11 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
     CardView card;
     TextView city,street;
 
-    int item[]={R.drawable.pizza,R.drawable.main_course,R.drawable.burger,R.drawable.chinese,R.drawable.soup};
+    int item[] = {R.drawable.pizza,
+            R.drawable.main_course,
+            R.drawable.burger,
+            R.drawable.chinese,
+            R.drawable.soup};
 
     int PLACE_PICKER_REQUEST = 1;
     PrefManager pref;

@@ -2,9 +2,9 @@
 
     package="com.verbosetech.fooddude">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -26,18 +26,20 @@
 
         </activity>
 
-        <activity android:name="com.verbosetech.fooddude.Activities.FoodActivity"></activity>
-        <activity android:name="com.verbosetech.fooddude.Activities.FoodDetailActivity"
-                  android:windowSoftInputMode="stateHidden|adjustResize"></activity>
-        <activity android:name="com.verbosetech.fooddude.Activities.CartActivity"></activity>
-        <activity android:name="com.verbosetech.fooddude.Activities.ConfirmActivity"></activity>
-        <activity android:name="com.verbosetech.fooddude.Activities.PaymentActivity"></activity>
-        <activity android:name="com.verbosetech.fooddude.Activities.RefineActivity"></activity>
-        <activity android:name="com.verbosetech.fooddude.Activities.SignInActivity"
-            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
-        <activity android:name="com.verbosetech.fooddude.Activities.MainActivity"></activity>
-        <activity android:name="com.verbosetech.fooddude.Activities.AddAddressActivity"></activity>
-        <activity android:name="com.verbosetech.fooddude.Activities.EditActivity"></activity>
+        <activity android:name="com.verbosetech.fooddude.Activities.FoodActivity" />
+        <activity
+            android:name="com.verbosetech.fooddude.Activities.FoodDetailActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity android:name="com.verbosetech.fooddude.Activities.CartActivity" />
+        <activity android:name="com.verbosetech.fooddude.Activities.ConfirmActivity" />
+        <activity android:name="com.verbosetech.fooddude.Activities.PaymentActivity" />
+        <activity android:name="com.verbosetech.fooddude.Activities.RefineActivity" />
+        <activity
+            android:name="com.verbosetech.fooddude.Activities.SignInActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity android:name="com.verbosetech.fooddude.Activities.MainActivity" />
+        <activity android:name="com.verbosetech.fooddude.Activities.AddAddressActivity" />
+        <activity android:name="com.verbosetech.fooddude.Activities.EditActivity" />
 
 
         <meta-data

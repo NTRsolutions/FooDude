@@ -5,13 +5,11 @@
     android:paddingTop="15dp"
     android:gravity="center"
     android:paddingLeft="15dp"
-    android:paddingRight="15dp"
-    >
+    android:paddingRight="15dp">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="wrap_content"
-        android:layout_height="?attr/actionBarSize"
-        android:gravity="bottom">
+        android:layout_height="?attr/actionBarSize">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -19,9 +17,10 @@
         android:src="@drawable/pizza"
         android:id="@+id/food_image"
         android:adjustViewBounds="true"
+        android:layout_gravity="bottom"
         />
 
-    </LinearLayout>
+    </FrameLayout>
 
     <TextView
         android:layout_width="wrap_content"

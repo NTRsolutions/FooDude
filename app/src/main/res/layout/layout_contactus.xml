@@ -1,5 +1,5 @@
 
-<RelativeLayout android:layout_width="match_parent"
+<FrameLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,19 +12,18 @@
         android:orientation="vertical"
         android:weightSum="2">
 
-        <LinearLayout
+        <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"></LinearLayout>
+            android:layout_weight="1" />
 
-        <LinearLayout
+        <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/colorAccent"></LinearLayout>
+            android:background="@color/colorAccent" />
 
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,7 +34,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:id="@+id/layout3"
             android:orientation="vertical"
             android:layout_weight="0.88"
             android:gravity="center_horizontal">
@@ -129,18 +127,10 @@
 
         </LinearLayout>
 
-
         <ScrollView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1.12">
-
-        <RelativeLayout
-            android:layout_alignParentBottom="true"
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -204,12 +194,8 @@
 
             </LinearLayout>
 
-        </RelativeLayout>
-
         </ScrollView>
 
     </LinearLayout>
 
-
-
-</RelativeLayout>
+</FrameLayout>

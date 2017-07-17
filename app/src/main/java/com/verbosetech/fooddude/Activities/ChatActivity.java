@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
 import com.verbosetech.fooddude.Models.Message;
 import com.verbosetech.fooddude.Others.CustomMessageAdapter;
 import com.verbosetech.fooddude.R;
