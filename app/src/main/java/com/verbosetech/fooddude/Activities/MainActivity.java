@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -35,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
     private NavigationView navigationView;
     private DrawerLayout drawer;
-    private View navHeader;
     private TextView txtName;
     private Toolbar toolbar;
     private ImageView toolbar_logo;
@@ -43,20 +43,18 @@ public class MainActivity extends AppCompatActivity {
 
 
     // index to identify current nav menu item
-    public static int navItemIndex = 0;
+    private static int navItemIndex = 0;
 
     // tags used to attach the fragments
     private static final String TAG_HOME = "home";
     private static final String TAG_ORDERS = "orders";
     private static final String TAG_PROFILE = "profile";
     private static final String TAG_SUPPORT = "support";
-    public static String CURRENT_TAG = TAG_HOME;
+    private static String CURRENT_TAG = TAG_HOME;
 
     // toolbar titles respected to selected nav menu item
     private String[] activityTitles;
 
-    // flag to load home fragment when user presses back key
-    private boolean shouldLoadHomeFragOnBackPress = true;
     private Handler mHandler;
 
 
@@ -76,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setItemIconTintList(null);
 
         // Navigation view header
-        navHeader = navigationView.getHeaderView(0);
+        View navHeader = navigationView.getHeaderView(0);
         txtName = (TextView) navHeader.findViewById(R.id.name);
 
 
@@ -157,20 +155,16 @@ public class MainActivity extends AppCompatActivity {
         switch (navItemIndex) {
             case 0:
                 // home
-                HomeFragment homeFragment = new HomeFragment();
-                return homeFragment;
+                return new HomeFragment();
             case 1:
                 // photos
-                OrdersFragment ordersFragment = new OrdersFragment();
-                return ordersFragment;
+                return new OrdersFragment();
             case 2:
                 // movies fragment
-                ProfileFragment profileFragment = new ProfileFragment();
-                return profileFragment;
+                return new ProfileFragment();
             case 4:
                 // notifications fragment
-                SupportFragment notificationsFragment = new SupportFragment();
-                return notificationsFragment;
+                return new SupportFragment();
 
             default:
                 return new HomeFragment();
@@ -213,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
 
             // This method will trigger on item Click of navigation menu
             @Override
-            public boolean onNavigationItemSelected(MenuItem menuItem) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
                 //Check to see which item was being clicked and perform appropriate action
                 switch (menuItem.getItemId()) {
@@ -296,7 +290,7 @@ public class MainActivity extends AppCompatActivity {
         };
 
         //Setting the actionbarToggle to drawer layout
-        drawer.setDrawerListener(actionBarDrawerToggle);
+        drawer.addDrawerListener(actionBarDrawerToggle);
 
         //calling sync state is necessary or else your hamburger icon wont show up
         actionBarDrawerToggle.syncState();
@@ -311,6 +305,7 @@ public class MainActivity extends AppCompatActivity {
 
         // This code loads home fragment when back key is pressed
         // when user is in other fragment than home
+        boolean shouldLoadHomeFragOnBackPress = true;
         if (shouldLoadHomeFragOnBackPress) {
             // checking if user is on other navigation menu
             // rather than home

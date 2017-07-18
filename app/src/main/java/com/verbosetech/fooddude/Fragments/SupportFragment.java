@@ -15,12 +15,10 @@ import com.verbosetech.fooddude.R;
 
 public class SupportFragment extends Fragment {
 
-    private View view;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.layout_contactus,container,false);
+        View view = inflater.inflate(R.layout.layout_contactus, container, false);
         return view;
     }
 }

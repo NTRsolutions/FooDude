@@ -24,22 +24,20 @@ import java.util.List;
 
 public class ProcessOrdersFragment extends Fragment {
 
-    private View view;
-    private RecyclerView.LayoutManager layoutManager;
-    BillAdapter adapter;
-    RecyclerView recyclerView;
-    List<BillItem> billItemList;
+    private BillAdapter adapter;
+    private RecyclerView recyclerView;
+    private List<BillItem> billItemList;
 
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.process_layout,container,false);
+        View view = inflater.inflate(R.layout.process_layout, container, false);
 
         recyclerView = (RecyclerView) view.findViewById(R.id.bill_item_grid);
         recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         getCards();
@@ -47,7 +45,7 @@ public class ProcessOrdersFragment extends Fragment {
         return view;
     }
 
-    public void getCards(){
+    private void getCards(){
 
         billItemList=new ArrayList<>();
 

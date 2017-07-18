@@ -6,8 +6,8 @@ package com.verbosetech.fooddude.Models;
 
 public class Profile {
 
-    String add_type;
-    String address;
+    private String add_type;
+    private String address;
 
     public Profile(String add_type, String address) {
         this.add_type = add_type;

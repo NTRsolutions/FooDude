@@ -18,11 +18,11 @@ import java.util.ArrayList;
  * Created by sagar on 2/7/17.
  */
 
-public class MessageAdapter extends BaseAdapter {
+class MessageAdapter extends BaseAdapter {
 
-    Context messageContext;
-    ArrayList<Message> messageList;
-    Message message;
+    private final Context messageContext;
+    private final ArrayList<Message> messageList;
+    private Message message;
 
     public MessageAdapter(Context context, ArrayList<Message> messages){
         messageList = messages;

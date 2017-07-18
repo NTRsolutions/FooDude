@@ -18,18 +18,18 @@ import java.util.List;
 
 public class PastOrdersAdapter extends RecyclerView.Adapter<PastOrdersAdapter.MyHolder> {
 
-    public RecyclerView re;
-    private List<PastOrders> dataSet ;
-    public Context context=null;
-    VenueAdapterClickCallbacks venueAdapterClickCallbacks;
+    private RecyclerView re;
+    private final List<PastOrders> dataSet ;
+    private Context context=null;
+    private final VenueAdapterClickCallbacks venueAdapterClickCallbacks;
 
 
 
     public class MyHolder extends RecyclerView.ViewHolder
     {
-        TextView date;
-        TextView items;
-        TextView price;
+        final TextView date;
+        final TextView items;
+        final TextView price;
 
 
         public MyHolder(View itemView)

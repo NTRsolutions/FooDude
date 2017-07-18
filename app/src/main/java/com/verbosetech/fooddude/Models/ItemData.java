@@ -6,8 +6,8 @@ package com.verbosetech.fooddude.Models;
 
 public class ItemData {
 
-    String text;
-    Integer imageId;
+    private String text;
+    private Integer imageId;
 
 
     public ItemData(String text, Integer imageId){

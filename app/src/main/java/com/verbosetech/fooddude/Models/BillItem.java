@@ -6,9 +6,9 @@ package com.verbosetech.fooddude.Models;
 
 public class BillItem {
 
-    String name;
-    String quantity;
-    double perprice;
+    private String name;
+    private String quantity;
+    private double perprice;
 
     public BillItem(String name, String quantity, double perprice) {
         this.name = name;

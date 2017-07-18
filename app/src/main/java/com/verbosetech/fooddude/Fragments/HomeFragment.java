@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -44,36 +45,34 @@ import static android.app.Activity.RESULT_OK;
 
 public class HomeFragment extends Fragment implements ViewPager.OnPageChangeListener, View.OnClickListener {
 
-    View view;
-    Pager mViewPager;
+    private View view;
+    private Pager mViewPager;
     private CustomPagerAdapter mAdapter;
     private LinearLayout pager_indicator;
     private int dotsCount;
     private ImageView[] dots;
     private RecyclerView horizontal_recycler_view;
-    private ArrayList<Item> horizontalList;
-    private CustomItemAdapter horizontalAdapter;
 
 
-    private RecyclerView.LayoutManager layoutManager;
-    DiscountItemAdapter adapter;
-    RecyclerView recyclerView;
-    List<DiscountItem> itemList;
+    private DiscountItemAdapter adapter;
+    private RecyclerView recyclerView;
+    private List<DiscountItem> itemList;
 
-    LinearLayout linearLayout;
-    CardView card;
-    TextView city,street;
+    private LinearLayout linearLayout;
+    private CardView card;
+    private TextView city;
+    private TextView street;
 
-    int item[] = {R.drawable.pizza,
+    private final int[] item = {R.drawable.pizza,
             R.drawable.main_course,
             R.drawable.burger,
             R.drawable.chinese,
             R.drawable.soup};
 
-    int PLACE_PICKER_REQUEST = 1;
-    PrefManager pref;
+    private final int PLACE_PICKER_REQUEST = 1;
+    private PrefManager pref;
 
-    int[] mResources = {R.drawable.banerburger, R.drawable.banerburger, R.drawable.banerburger,R.drawable.banerburger};
+    private final int[] mResources = {R.drawable.banerburger, R.drawable.banerburger, R.drawable.banerburger,R.drawable.banerburger};
 
 
     @Nullable
@@ -98,7 +97,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
 
         recyclerView = (RecyclerView) view.findViewById(R.id.discount_recycle_grid);
         recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         setDiscountCards();
@@ -107,7 +106,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
         mAdapter = new CustomPagerAdapter(getActivity(), mResources);
         mViewPager.setAdapter(mAdapter);
         mViewPager.setCurrentItem(0);
-        mViewPager.setOnPageChangeListener(this);
+        mViewPager.addOnPageChangeListener(this);
         setPageViewIndicator();
 
 
@@ -126,7 +125,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
 
         for (int i = 0; i < dotsCount; i++) {
             dots[i] = new ImageView(getActivity());
-            dots[i].setImageDrawable(getResources().getDrawable(R.drawable.nonselected_item_dot));
+            dots[i].setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.nonselected_item_dot));
 
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -150,7 +149,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
             pager_indicator.addView(dots[i], params);
         }
 
-        dots[0].setImageDrawable(getResources().getDrawable(R.drawable.selected_item_dot));
+        dots[0].setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.selected_item_dot));
     }
 
 
@@ -164,10 +163,10 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
 
         Log.d("###onPageSelected, pos ", String.valueOf(position));
         for (int i = 0; i < dotsCount; i++) {
-            dots[i].setImageDrawable(getResources().getDrawable(R.drawable.nonselected_item_dot));
+            dots[i].setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.nonselected_item_dot));
         }
 
-        dots[position].setImageDrawable(getResources().getDrawable(R.drawable.selected_item_dot));
+        dots[position].setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.selected_item_dot));
 
         if (position + 1 == dotsCount) {
 
@@ -184,9 +183,9 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
     }
 
 
-    public void setAdapter(){
+    private void setAdapter(){
 
-        horizontalList=new ArrayList<>();
+        ArrayList<Item> horizontalList = new ArrayList<>();
 
         //filling the data in horizontal recycle view of home page
         horizontalList.add(new Item(item[0],"Pizza"));
@@ -195,7 +194,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
         horizontalList.add(new Item(item[3],"Chinese"));
         horizontalList.add(new Item(item[4],"Soup"));
 
-        horizontalAdapter=new CustomItemAdapter(getActivity(), horizontalList, new CustomItemAdapter.VenueAdapterClickCallbacks() {
+        CustomItemAdapter horizontalAdapter = new CustomItemAdapter(getActivity(), horizontalList, new CustomItemAdapter.VenueAdapterClickCallbacks() {
             @Override
             public void onCardClick(String p) {
 
@@ -207,7 +206,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
         horizontal_recycler_view.setAdapter(horizontalAdapter);
     }
 
-    public void setDiscountCards(){
+    private void setDiscountCards(){
 
         itemList=new ArrayList<>();
 
@@ -238,9 +237,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
 
                 try {
                     startActivityForResult(builder.build(getActivity()), PLACE_PICKER_REQUEST);
-                } catch (GooglePlayServicesRepairableException e) {
-                    e.printStackTrace();
-                } catch (GooglePlayServicesNotAvailableException e) {
+                } catch (GooglePlayServicesRepairableException | GooglePlayServicesNotAvailableException e) {
                     e.printStackTrace();
                 }
         }
@@ -249,7 +246,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == PLACE_PICKER_REQUEST) {
             if (resultCode == RESULT_OK) {
-                Place place = PlacePicker.getPlace(data, getActivity());
+                Place place = PlacePicker.getPlace(getContext(), data);
 //                String toastMsg = String.format("Place: %s", place.getName());
                 String add[]=place.getAddress().toString().split(",");
                 if(add.length>=4) {

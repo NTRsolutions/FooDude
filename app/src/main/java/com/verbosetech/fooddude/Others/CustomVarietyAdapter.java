@@ -18,16 +18,16 @@ import java.util.List;
 
 public class CustomVarietyAdapter extends RecyclerView.Adapter<CustomVarietyAdapter.MyHolder>{
 
-    public RecyclerView re;
-    private List<Variety> dataSet ;
-    public Context context=null;
-    VenueAdapterClickCallbacks venueAdapterClickCallbacks;
+    private RecyclerView re;
+    private final List<Variety> dataSet ;
+    private Context context=null;
+    private final VenueAdapterClickCallbacks venueAdapterClickCallbacks;
 
 
 
     public class MyHolder extends RecyclerView.ViewHolder
     {
-        TextView name;
+        final TextView name;
 
 
         public MyHolder(View itemView)

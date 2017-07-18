@@ -6,9 +6,9 @@ package com.verbosetech.fooddude.Models;
 
 public class ItemVariety {
 
-    int image;
-    String price;
-    String name;
+    private int image;
+    private String price;
+    private String name;
 
 
     public ItemVariety(int image, String price, String name) {

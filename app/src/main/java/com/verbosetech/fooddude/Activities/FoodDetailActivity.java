@@ -21,9 +21,12 @@ import com.verbosetech.fooddude.R;
 public class FoodDetailActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    LinearLayout button_layout;
-    ImageView back,remove,add;
-    TextView itemname,no_of_items;
+    private LinearLayout button_layout;
+    private ImageView back;
+    private ImageView remove;
+    private ImageView add;
+    private TextView itemname;
+    private TextView no_of_items;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

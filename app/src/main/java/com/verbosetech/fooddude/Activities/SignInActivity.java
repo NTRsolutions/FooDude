@@ -18,10 +18,15 @@ import com.verbosetech.fooddude.R;
 
 public class SignInActivity extends AppCompatActivity implements View.OnClickListener {
 
-    TextView sign_in,sign_up,sign_in_text,sign_up_text,forgot;
-    EditText name;
-    LinearLayout layout1,layout2;
-    Button signIn;
+    private TextView sign_in;
+    private TextView sign_up;
+    private TextView sign_in_text;
+    private TextView sign_up_text;
+    private TextView forgot;
+    private EditText name;
+    private LinearLayout layout1;
+    private LinearLayout layout2;
+    private Button signIn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

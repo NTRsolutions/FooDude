@@ -1,9 +1,5 @@
 package com.verbosetech.fooddude.Others;
 
-/**
- * Created by sagar on 3/7/17.
- */
-
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,16 +12,20 @@ import com.verbosetech.fooddude.R;
 
 import java.util.List;
 
+
+/**
+ * Created by sagar on 3/7/17.
+ */
 public class CustomMessageAdapter extends RecyclerView.Adapter<CustomMessageAdapter.MyHolder> {
 
-        public RecyclerView re;
-        private List<Message> dataSet ;
-        public Context context=null;
-        VenueAdapterClickCallbacks venueAdapterClickCallbacks;
+        private RecyclerView re;
+        private final List<Message> dataSet ;
+        private Context context=null;
+        private final VenueAdapterClickCallbacks venueAdapterClickCallbacks;
 
 public class MyHolder extends RecyclerView.ViewHolder
 {
-    TextView message;
+    final TextView message;
 
 
     public MyHolder(View itemView)

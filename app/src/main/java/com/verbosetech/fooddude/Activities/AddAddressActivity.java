@@ -15,7 +15,7 @@ import com.verbosetech.fooddude.R;
 
 public class AddAddressActivity extends AppCompatActivity {
 
-    Toolbar toolbar;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

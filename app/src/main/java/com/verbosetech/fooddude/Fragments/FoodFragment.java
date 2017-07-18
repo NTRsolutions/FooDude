@@ -23,23 +23,20 @@ import java.util.List;
 public class FoodFragment extends Fragment {
 
 
-    private View view;
-
     private TabLayout tabLayout;
-    private ViewPager viewPager;
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.fragment_food_layout,container,false);
+        View view = inflater.inflate(R.layout.fragment_food_layout, container, false);
 
         //setting the view pager
-        viewPager = (ViewPager)view.findViewById(R.id.viewpager);
+        ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewpager);
         createViewPager(viewPager);
 
         //intializing the tab layout
-        tabLayout = (TabLayout)view.findViewById(R.id.tab_host);
+        tabLayout = (TabLayout) view.findViewById(R.id.tab_host);
         tabLayout.setupWithViewPager(viewPager);
         createTabIcons();
         return view;

@@ -27,14 +27,13 @@ import java.util.List;
 
 public class ConfirmActivity extends AppCompatActivity implements View.OnClickListener {
 
-    LinearLayout button_layout;
-    Toolbar toolbar;
+    private LinearLayout button_layout;
+    private Toolbar toolbar;
 
-    private RecyclerView.LayoutManager layoutManager;
-    BillAdapter adapter;
-    RecyclerView recyclerView;
-    List<BillItem> billItemList;
-    ImageView edit;
+    private BillAdapter adapter;
+    private RecyclerView recyclerView;
+    private List<BillItem> billItemList;
+    private ImageView edit;
 
 
     @Override
@@ -62,7 +61,7 @@ public class ConfirmActivity extends AppCompatActivity implements View.OnClickLi
 
         recyclerView = (RecyclerView) findViewById(R.id.bill_item_grid);
         recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(getApplicationContext());
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         getCards();
@@ -87,7 +86,7 @@ public class ConfirmActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-    public void getCards(){
+    private void getCards(){
 
         billItemList=new ArrayList<>();
 

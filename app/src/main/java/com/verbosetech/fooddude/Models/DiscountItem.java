@@ -6,10 +6,10 @@ package com.verbosetech.fooddude.Models;
 
 public class DiscountItem {
 
-    int image;
-    String price;
-    String name;
-    String discount;
+    private int image;
+    private String price;
+    private String name;
+    private String discount;
 
     public DiscountItem(int image, String price, String name, String discount) {
         this.image = image;

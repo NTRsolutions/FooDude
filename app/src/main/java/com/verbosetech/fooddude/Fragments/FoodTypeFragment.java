@@ -25,27 +25,25 @@ import java.util.List;
 
 public class FoodTypeFragment extends Fragment {
 
-    private View view;
-    private RecyclerView.LayoutManager layoutManager;
-    FoodVarietyAdapter adapter;
-    RecyclerView recyclerView;
-    List<ItemVariety> itemVarietyList;
+    private FoodVarietyAdapter adapter;
+    private RecyclerView recyclerView;
+    private List<ItemVariety> itemVarietyList;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.layout_foodtype,container,false);
+        View view = inflater.inflate(R.layout.layout_foodtype, container, false);
 
         recyclerView = (RecyclerView) view.findViewById(R.id.food_type_grid);
         recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         getCards();
         return view;
     }
 
-    public void getCards(){
+    private void getCards(){
 
         itemVarietyList=new ArrayList<>();
 

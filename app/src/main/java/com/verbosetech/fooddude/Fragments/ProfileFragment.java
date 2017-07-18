@@ -29,27 +29,28 @@ import java.util.List;
 
 public class ProfileFragment extends Fragment implements View.OnClickListener {
 
-    private View view;
-    private RecyclerView.LayoutManager layoutManager;
-    ProfileAdapter adapter;
-    RecyclerView recyclerView;
-    List<Profile> profileList;
+    private ProfileAdapter adapter;
+    private RecyclerView recyclerView;
+    private List<Profile> profileList;
 
-    ImageView edit;
-    TextView add,save;
-    EditText name,mail,phone;
+    private ImageView edit;
+    private TextView add;
+    private TextView save;
+    private EditText name;
+    private EditText mail;
+    private EditText phone;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.profile_layout,container,false);
+        View view = inflater.inflate(R.layout.profile_layout, container, false);
 
         edit=(ImageView) view.findViewById(R.id.edit);
-        add=(TextView)view.findViewById(R.id.add_new);
-        name=(EditText)view.findViewById(R.id.name);
-        mail=(EditText)view.findViewById(R.id.gmail);
-        phone=(EditText)view.findViewById(R.id.phone_num);
-        save=(TextView)view.findViewById(R.id.save);
+        add=(TextView) view.findViewById(R.id.add_new);
+        name=(EditText) view.findViewById(R.id.name);
+        mail=(EditText) view.findViewById(R.id.gmail);
+        phone=(EditText) view.findViewById(R.id.phone_num);
+        save=(TextView) view.findViewById(R.id.save);
 
 
         edit.setOnClickListener(this);
@@ -58,7 +59,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
         recyclerView = (RecyclerView) view.findViewById(R.id.profile_grid);
         recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         getCards();
@@ -66,7 +67,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         return view;
     }
 
-    public void getCards(){
+    private void getCards(){
 
         profileList=new ArrayList<>();
 

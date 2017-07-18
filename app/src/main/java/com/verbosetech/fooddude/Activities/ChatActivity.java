@@ -22,10 +22,10 @@ import java.util.List;
 public class ChatActivity extends AppCompatActivity {
 
 
-    LinearLayoutManager layoutManager;
-    CustomMessageAdapter adapter;
-    RecyclerView recyclerView;
-    List<Message> messageList;
+    private LinearLayoutManager layoutManager;
+    private CustomMessageAdapter adapter;
+    private RecyclerView recyclerView;
+    private List<Message> messageList;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class ChatActivity extends AppCompatActivity {
     }
 
 
-    void getCards(){
+    private void getCards(){
 
 
         messageList=new ArrayList<>();

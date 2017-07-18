@@ -6,8 +6,8 @@ package com.verbosetech.fooddude.Models;
 
 public class Item {
 
-    int image;
-    String name;
+    private int image;
+    private String name;
 
     public Item(int image, String name) {
         this.image = image;

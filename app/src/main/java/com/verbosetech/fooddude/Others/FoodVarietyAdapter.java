@@ -21,16 +21,16 @@ import java.util.List;
 
 public class FoodVarietyAdapter extends RecyclerView.Adapter<FoodVarietyAdapter.MyHolder> {
 
-    public RecyclerView re;
-    private List<ItemVariety> dataSet ;
-    public Context context=null;
-    VenueAdapterClickCallbacks venueAdapterClickCallbacks;
+    private RecyclerView re;
+    private final List<ItemVariety> dataSet ;
+    private Context context=null;
+    private final VenueAdapterClickCallbacks venueAdapterClickCallbacks;
 
     public class MyHolder extends RecyclerView.ViewHolder
     {
-        TextView name;
-        TextView price;
-        ImageView image;
+        final TextView name;
+        final TextView price;
+        final ImageView image;
 
         public MyHolder(View itemView)
         {

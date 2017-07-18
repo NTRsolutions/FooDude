@@ -6,7 +6,7 @@ package com.verbosetech.fooddude.Models;
 
 public class Variety {
 
-    String name;
+    private String name;
 
     public Variety(String name) {
         this.name = name;

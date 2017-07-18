@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:text="Hey Sachin"
         android:layout_alignBottom="@+id/img_header_bg"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginBottom="15dp"
         android:layout_marginLeft="25dp"

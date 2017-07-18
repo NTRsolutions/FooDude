@@ -12,16 +12,16 @@ import android.content.SharedPreferences;
 
 public class PrefManager {
     // Shared Preferences
-    SharedPreferences pref;
+    private final SharedPreferences pref;
 
     // Editor for Shared preferences
-    SharedPreferences.Editor editor;
+    private final SharedPreferences.Editor editor;
 
     // Context
-    Context _context;
+    private final Context _context;
 
     // Shared pref mode
-    int PRIVATE_MODE = 0;
+    private final int PRIVATE_MODE = 0;
 
 
     // Shared pref file name

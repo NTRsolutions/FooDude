@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
@@ -32,8 +33,8 @@ import static com.verbosetech.fooddude.R.id.spinner;
 
 public class FoodActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
-    Toolbar toolbar;
-    PrefManager prefManager;
+    private Toolbar toolbar;
+    private PrefManager prefManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -66,7 +67,7 @@ public class FoodActivity extends AppCompatActivity implements SearchView.OnQuer
 
     }
 
-    public void getToolbarSpinner(){
+    private void getToolbarSpinner(){
 
         ArrayList<ItemData> list=new ArrayList<>();
 
@@ -81,7 +82,7 @@ public class FoodActivity extends AppCompatActivity implements SearchView.OnQuer
         Spinner sp=(Spinner)toolbar.findViewById(spinner);
         SpinnerAdapter adapter=new SpinnerAdapter(this,
                 R.layout.spinner_layout,R.id.food_name,list);
-        sp.getBackground().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
+        sp.getBackground().setColorFilter(ContextCompat.getColor(this, R.color.white), PorterDuff.Mode.SRC_ATOP);
         sp.setAdapter(adapter);
 
     }

@@ -90,7 +90,7 @@
                         android:text="Bleecker St"
                         android:textColor="@color/white"
                         android:layout_marginLeft="5dp"
-                        android:textSize="10dp"
+                        android:textSize="10sp"
                         android:id="@+id/street"/>
 
                     <TextView
@@ -120,7 +120,7 @@
                     android:layout_height="wrap_content"
                     android:hint="What'd you like to eat today?"
                     android:layout_weight="90"
-                    android:textSize="15dp"
+                    android:textSize="15sp"
                     android:background="@color/white"
                     android:layout_marginLeft="15dp"/>
 

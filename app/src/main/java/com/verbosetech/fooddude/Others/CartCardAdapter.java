@@ -22,20 +22,23 @@ import java.util.List;
 
 public class CartCardAdapter extends RecyclerView.Adapter<CartCardAdapter.MyHolder> {
 
-    public RecyclerView re;
-    private List<ItemVariety> dataSet ;
-    public Context context=null;
-    VenueAdapterClickCallbacks venueAdapterClickCallbacks;
-    PrefManager pref;
-    double amount=0.0;
+    private RecyclerView re;
+    private final List<ItemVariety> dataSet ;
+    private Context context=null;
+    private final VenueAdapterClickCallbacks venueAdapterClickCallbacks;
+    private final PrefManager pref;
+    private double amount=0.0;
 
 
 
     public class MyHolder extends RecyclerView.ViewHolder
     {
-        TextView name;
-        TextView price,no_of_items;
-        ImageView image,add,remove;
+        final TextView name;
+        final TextView price;
+        final TextView no_of_items;
+        final ImageView image;
+        final ImageView add;
+        final ImageView remove;
 
 
         public MyHolder(View itemView)
@@ -89,7 +92,7 @@ public class CartCardAdapter extends RecyclerView.Adapter<CartCardAdapter.MyHold
             @Override
             public void onClick(View v) {
 
-                int cal_dist=0,d;
+                int cal_dist,d;
                 String a=no_of_items.getText().toString();
                 d=Integer.parseInt(a);
                 cal_dist=++d;

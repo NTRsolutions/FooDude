@@ -36,7 +36,7 @@
         android:paddingRight="10dp"
         android:paddingLeft="20dp"
         android:textColor="@color/colorAccent"
-        android:textSize="18dp"/>
+        android:textSize="18sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,7 +46,8 @@
         android:weightSum="100"
         android:layout_marginTop="20dp"
         android:layout_marginRight="15dp"
-        android:layout_marginLeft="15dp">
+        android:layout_marginLeft="15dp"
+        android:baselineAligned="false">
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -65,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Crispy Chicken garlic periperi pizza"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textColor="@color/black"
                 android:id="@+id/item_name"
                 />
@@ -95,7 +96,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textColor="@color/black"
                 android:id="@+id/no_of_items"/>
 
@@ -117,7 +118,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:focusable="true"
             android:focusableInTouchMode="true">
@@ -136,7 +137,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/offers"
-                android:layout_below="@+id/detail"
                 android:id="@+id/offer"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"
@@ -147,7 +147,6 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/offer"
                 android:id="@+id/offer_details"
                 android:text="Buy @ pan pizza and get @ medium size pizza with free home delivery.!"
                 android:layout_marginLeft="15dp"
@@ -158,13 +157,12 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/offer_details"
                 android:hint="@string/Addnote"
                 android:layout_marginTop="25dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:paddingBottom="15dp"
-                android:textSize="15dp"/>
+                android:textSize="15sp"/>
 
         </LinearLayout>
 

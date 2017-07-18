@@ -17,9 +17,9 @@ import com.verbosetech.fooddude.R;
 
 public class PaymentActivity extends AppCompatActivity implements View.OnClickListener {
 
-    LinearLayout button_layout;
+    private LinearLayout button_layout;
 
-    Toolbar toolbar;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

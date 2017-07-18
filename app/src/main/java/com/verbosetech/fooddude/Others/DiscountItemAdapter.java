@@ -21,17 +21,17 @@ import java.util.List;
 
 public class DiscountItemAdapter extends RecyclerView.Adapter<DiscountItemAdapter.MyHolder>{
 
-    public RecyclerView re;
-    private List<DiscountItem> dataSet ;
-    public Context context=null;
-    VenueAdapterClickCallbacks venueAdapterClickCallbacks;
+    private RecyclerView re;
+    private final List<DiscountItem> dataSet ;
+    private Context context=null;
+    private final VenueAdapterClickCallbacks venueAdapterClickCallbacks;
 
     public class MyHolder extends RecyclerView.ViewHolder
     {
-        TextView name;
-        TextView price;
-        TextView discount;
-        ImageView image;
+        final TextView name;
+        final TextView price;
+        final TextView discount;
+        final ImageView image;
 
         public MyHolder(View itemView)
         {

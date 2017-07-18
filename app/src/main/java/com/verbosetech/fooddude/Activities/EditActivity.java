@@ -19,9 +19,11 @@ import com.verbosetech.fooddude.R;
 
 public class EditActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    Toolbar toolbar;
-    Spinner spinner_states_activity,spinner_cities_activity;
-    SpinnerAdapter adapter,unit_adapter;
+    private Toolbar toolbar;
+    private Spinner spinner_states_activity;
+    Spinner spinner_cities_activity;
+    private SpinnerAdapter adapter;
+    SpinnerAdapter unit_adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

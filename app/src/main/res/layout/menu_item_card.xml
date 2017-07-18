@@ -30,7 +30,7 @@
             android:paddingRight="10dp"
             android:paddingLeft="20dp"
             android:textColor="@color/colorAccent"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:id="@+id/price"/>
 
 
@@ -62,7 +62,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Crispy Chicken garlic periperi pizza"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"
                     android:id="@+id/item_name"
                     />

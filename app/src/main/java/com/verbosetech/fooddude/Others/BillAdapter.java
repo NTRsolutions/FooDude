@@ -18,15 +18,15 @@ import java.util.List;
 
 public class BillAdapter extends RecyclerView.Adapter<BillAdapter.MyHolder> {
 
-    public RecyclerView re;
-    private List<BillItem> dataSet ;
-    public Context context=null;
-    VenueAdapterClickCallbacks venueAdapterClickCallbacks;
+    private RecyclerView re;
+    private final List<BillItem> dataSet ;
+    private Context context=null;
+    private final VenueAdapterClickCallbacks venueAdapterClickCallbacks;
 
     public class MyHolder extends RecyclerView.ViewHolder
     {
-        TextView name;
-        TextView price;
+        final TextView name;
+        final TextView price;
 
         public MyHolder(View itemView)
         {

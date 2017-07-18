@@ -20,21 +20,22 @@ import java.util.List;
 
 public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.MyHolder>  {
 
-    public RecyclerView re;
-    private List<Profile> dataSet ;
-    public Context context=null;
-    VenueAdapterClickCallbacks venueAdapterClickCallbacks;
+    private RecyclerView re;
+    private final List<Profile> dataSet ;
+    private Context context=null;
+    private final VenueAdapterClickCallbacks venueAdapterClickCallbacks;
 
 
 
 
     public class MyHolder extends RecyclerView.ViewHolder
     {
-        TextView address_type;
-        TextView address;
-        ImageView drop_down;
-        TextView edit,remove;
-        CardView card;
+        final TextView address_type;
+        final TextView address;
+        final ImageView drop_down;
+        final TextView edit;
+        final TextView remove;
+        final CardView card;
 
 
         public MyHolder(View itemView)

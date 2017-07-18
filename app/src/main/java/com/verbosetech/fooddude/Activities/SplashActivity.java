@@ -14,13 +14,12 @@ import com.verbosetech.fooddude.R;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private int SPLASH_TIME_OUT=1000;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        int SPLASH_TIME_OUT = 1000;
         new Handler().postDelayed(new Runnable() {
 
             /*

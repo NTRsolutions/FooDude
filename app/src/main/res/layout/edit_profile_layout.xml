@@ -120,7 +120,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="25dp"
-                android:weightSum="100">
+                android:weightSum="100"
+                android:baselineAligned="false">
 
                 <LinearLayout
                     android:layout_width="0dp"

@@ -2,6 +2,7 @@ package com.verbosetech.fooddude.Others;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,10 +21,10 @@ import java.util.ArrayList;
 
 public class SpinnerAdapter extends ArrayAdapter<ItemData> {
 
-    int groupid;
+    private final int groupid;
     Activity context;
-    ArrayList<ItemData> list;
-    LayoutInflater inflater;
+    private final ArrayList<ItemData> list;
+    private final LayoutInflater inflater;
 
     public SpinnerAdapter(Activity context, int groupid, int id, ArrayList<ItemData> list){
 
@@ -33,18 +34,18 @@ public class SpinnerAdapter extends ArrayAdapter<ItemData> {
         this.groupid=groupid;
     }
 
-    public View getView(int position, View convertView, ViewGroup parent ){
 
-        View itemView=inflater.inflate(groupid,parent,false);
-        ImageView imageView=(ImageView)itemView.findViewById(R.id.food_image);
+    @NonNull
+    public View getView(int position, View convertView, @NonNull ViewGroup parent ){
+        View itemView = convertView == null ? inflater.inflate(groupid, parent, false) : convertView;
+        ImageView imageView = (ImageView) itemView.findViewById(R.id.food_image);
+        TextView textView = (TextView) itemView.findViewById(R.id.food_name);
         imageView.setImageResource(list.get(position).getImageId());
-        TextView textView=(TextView)itemView.findViewById(R.id.food_name);
         textView.setText(list.get(position).getText());
         return itemView;
     }
 
-    public View getDropDownView(int position, View convertView, ViewGroup parent){
+    public View getDropDownView(int position, View convertView, @NonNull ViewGroup parent){
         return getView(position,convertView,parent);
-
     }
 }

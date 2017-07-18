@@ -6,9 +6,9 @@ package com.verbosetech.fooddude.Models;
 
 public class PastOrders {
 
-    String date;
-    String number_of_items;
-    String price;
+    private String date;
+    private String number_of_items;
+    private String price;
 
     public PastOrders(String date, String number_of_items, String price) {
         this.date = date;

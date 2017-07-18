@@ -16,8 +16,8 @@ import com.verbosetech.fooddude.R;
 
 public class CustomPagerAdapter extends PagerAdapter {
 
-    private Context mContext;
-    private int[] mResources;
+    private final Context mContext;
+    private final int[] mResources;
 
     public CustomPagerAdapter(Context mContext, int[] mResources) {
         this.mContext = mContext;

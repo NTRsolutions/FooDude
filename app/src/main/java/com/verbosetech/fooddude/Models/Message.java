@@ -6,8 +6,8 @@ package com.verbosetech.fooddude.Models;
 
 public class Message {
 
-    String text;
-    String name;
+    private String text;
+    private String name;
 
     public Message(String text, String name) {
         this.text = text;
